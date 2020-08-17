@@ -1,0 +1,44 @@
+<style>
+#menu{
+        font-size: 15px;
+}
+</style>
+<nav id="menu">
+    <ul class="links">
+        <li class="active"> <a href="/">Home </a> </li>
+
+        <li class="nav-item">
+            <a href="/product">Products</a>
+            </li>
+        <li class="nav-item">
+            <a href="/checkout">CheckOuts</a>
+            </li>
+        <li class="nav-item">
+            <a href="/about">About Us</a></li>
+        <li class="nav-item">
+            <a href="/teams">Team</a></li>
+        <li class="nav-item">
+            <a href="/testimonials">Testimonials</a></li>
+        <li class="nav-item">
+            <a href="/FAQ">FAQ</a></li>
+        <li class="nav-item">
+            <a href="/terms">Terms</a></li>
+        <li class="nav-item">
+            <a href="/contact">Contact Us</a></li>
+        {{#if user}}
+            <li><a href="/user/profile">Profile</a></li>
+            <li class="nav-item">
+                <a href="/user/logout" class="nav-link">Logout</a>
+            </li>
+            <li><a href="/admin" style="{{adminCheck user.dataValues.role}}">Dashboard</a></li>
+            <li><a href="/adminRoute/manageusers" style="{{adminCheck user.dataValues.role}}">Manage User Account </a></li>
+        {{else}}
+        <li class="nav-item">
+            <a href="/user/login" class="nav-link">Login</a>
+        </li>
+        <li class="nav-item">
+            <a href="/user/register" class="nav-link">Register</a>
+        </li>
+        {{/if}}
+    </ul>
+</nav>

@@ -1,0 +1,260 @@
+<div class="container">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/scripts/profile.js"></script>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="content" class="content content-full-width">
+                            <!-- Begin Profile -->
+                            <div class="profile">
+                                <div class="profile-header">
+                                    <!-- Profile Header Cover -->
+                                    <div class="profile-header-cover"></div>
+                                    <!-- Profile Header Cover END -->
+                                    <!-- Profile Header Content -->
+                                    <div class="profile-header-content">
+                                        <!-- Profile Header IMG -->
+                                        <div class="profile-header-img">
+                                            <img src="/images/upload_images/{{user.prof_image}}" style="width: 100%;"
+                                                alt="avatar">
+                                        </div>
+                                        <!-- END Profile Header IMG -->
+                                        <!-- Profile Header Info -->
+                                        <div class="profile-header-info">
+                                            {{#if user}}
+                                            <h4 class="m-t-10 m-b-5">{{user.fname}} {{user.lname}}</h4>
+
+                                            <p class="m-b-10"></p>
+                                            <br>
+                                            <br>
+                                            <a href="user/editprofile/{{user.id}}" class="btn btn-xs btn-success">Edit
+                                                Profile</a>
+                                        </div>
+                                        <!-- END profile-header-info -->
+                                    </div>
+                                    <!-- END profile-header-content -->
+                                    <!-- BEGIN profile-header-tab -->
+                                    <ul class="profile-header-tab nav nav-tabs">
+                                        <li class="nav-item"><a href="" class="nav-link active" data-target="#profile"
+                                                data-toggle="tab">Profile</a></li>
+                                        <li class="nav-item"><a href="" class="nav-link" data-target="#posts"
+                                                data-toggle="tab">Posts</a></li>
+                                        <li class="nav-item"><a href="" class="nav-link" data-target="#comments"
+                                                data-toggle="tab">Comments</a></li>
+                                    </ul>
+                                    <!-- END profile-header-tab -->
+                                </div>
+                            </div>
+                            <!-- end profile -->
+                            <!-- begin profile-content -->
+                            <div class="profile-content">
+                                <!-- begin tab-content -->
+                                <div class="tab-content p-0">
+                                    <!-- begin #profile-about tab -->
+                                    <div class="tab-pane fade in active show" id="profile">
+                                        <div class="table-responsive">
+                                            <table class="table table-profile">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="highlight">
+                                                        <td class="field">Name</td>
+                                                        <td><span id="edit_fname">{{user.fname}}</span>&nbsp;<span
+                                                                id="edit_lname">{{user.lname}}</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Gender</td>
+                                                        <td><span id="edit_gender">{{user.gender}}</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Email</td>
+                                                        <td><span id="edit_email">{{user.email}}</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Mobile</td>
+                                                        <td><i class="fa fa-mobile fa-lg m-r-5"></i>&nbsp;<span
+                                                                id="mobile_span">{{user.mobile}}</span><span><input
+                                                                    type="text" id="mobile_tb" name="mobile"
+                                                                    value="{{user.mobile}}" class="form-control"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Home</td>
+                                                        <td><span id="home_span">{{user.home}}</span><span><input
+                                                                    type="text" id="home_tb" name="home"
+                                                                    class="form-control" value="{{user.home}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Office</td>
+                                                        <td><span id="office_span">{{user.office}}</span><span><input
+                                                                    type="text" id="office_tb" name="office"
+                                                                    class="form-control" value="{{user.office}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="divider">
+                                                        <td colspan="2"></td>
+                                                    </tr>
+                                                    <tr class="highlight">
+                                                        <td class="field">About Me</td>
+                                                        <td><span
+                                                                id="aboutme_span">{{user.aboutme}}</span><span><textarea
+                                                                    type="text" id="aboutme_tb" name="aboutme"
+                                                                    class="form-control" value="{{user.aboutme}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></textarea></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Occupation</td>
+                                                        <td><span
+                                                                id="occupation_span">{{user.occupation}}</span><span><input
+                                                                    type="text" id="occupation_tb" name="occupation"
+                                                                    class="form-control" value="{{user.occupation}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Hobbies</td>
+                                                        <td><span id="hobbies_span">{{user.hobbies}}</span><span><input
+                                                                    type="text" id="hobbies_tb" name="hobbies"
+                                                                    class="form-control" value="{{user.hobbies}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="divider">
+                                                        <td colspan="2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Country/Region</td>
+                                                        <td><span id="country_span">{{user.country}}</span><span><select
+                                                                    class="form-control input-inline input-xs"
+                                                                    name="country" id="country_select"
+                                                                    value="{{user.country}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;">{{#if countries}}
+                                                                    {{#each countries}}
+                                                                    <option value="{{country_name}}">
+                                                                        ({{country_code}})&nbsp;{{country_name}}
+                                                                    </option>
+                                                                    {{/each}}
+                                                                    {{else}}
+                                                                    <h4 class="m-t-10 m-b-5">No Countries Found</h4>
+                                                                    {{/if}}</select>
+                                                            </span></td>
+                                                        </td>
+                                                    </tr>
+
+
+                                                    <tr>
+                                                        <td class="field">Birth Date:</td>
+                                                        <td><span
+                                                                id="birthdate_span">{{user.birthdate}}</span><span><input
+                                                                    type="date" id="birthdate_tb" name="birthdate"
+                                                                    class="form-control"
+                                                                    value="{{formatDate user.birthdate  'DD MMMM YYYY'}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="field">Language</td>
+                                                        <td><span
+                                                                id="language_span">{{user.language}}</span><span><input
+                                                                    type="text" id="language_tb" name="language"
+                                                                    class="form-control" value="{{user.language}}"
+                                                                    style="display: none; width:50% !important; height:auto !important; padding:1px !important;"></span>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                        {{else}}
+                                        {{/if}}
+                                        <!-- end table -->
+                                    </div>
+                                    <!-- end #profile-about tab -->
+                                    <!-- Start profile post tab -->
+                                    <div class="tab-pane" id="posts">
+                                        <table class="table table-sm table-hover table-striped">
+                                            <tbody>
+                                                {{#if blogs}}
+                                                {{#each blogs}}
+                                                <tr>
+                                                    <td>
+                                                        <strong>{{author}}</strong> posted <strong>{{title}}</strong> on
+                                                        <strong>{{formatDate date_created 'DD MMMM YYYY hh:mm:ss'}}</strong>
+
+
+                                                    </td>
+                                                    <td>
+                                                        <a href="/blog/edit/{{id}}" class="btn btn-primary btn-xs"><i
+                                                                class="glyphicon glyphicon-pencil"></i> Edit</a>
+                                                        <a href="/blog/delete/{{id}}" class="btn btn-primary btn-xs"
+                                                            onclick="return confirm('Are you sure you want to delete this item?');"><i
+                                                                class="glyphicon glyphicon-trash"></i> Delete</a>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+                                                {{else}}
+                                                <h3>No posts yet</h3>
+                                                {{/if}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end #profile-post tab -->
+                                    <!-- start #profile-comment tab -->
+                                    <div class="tab-pane" id="comments">
+                                        <table class="table table-sm table-hover table-striped">
+                                            <tbody>
+                                                {{#if comments}}
+                                                {{#each comments}}
+                                                <tr>
+                                                    <td>
+                                                        <strong>{{author}}</strong> posted <strong>{{subject}}</strong>
+                                                        on
+                                                        <strong>{{formatDate date_created 'DD MMMM YYYY hh:mm:ss'}}</strong>
+
+
+                                                    </td>
+                                                    <td>
+                                                        <a href="/comment/edit/{{id}}" class="btn btn-primary btn-xs"><i
+                                                                class="glyphicon glyphicon-pencil"></i> Edit</a>
+                                                        <a href="/comment/delete/{{id}}" class="btn btn-primary btn-xs"
+                                                            onclick="return confirm('Are you sure you want to delete this item?');"><i
+                                                                class="glyphicon glyphicon-trash"></i> Delete</a>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+                                                {{else}}
+                                                <h3>No comments posted yet.</h3>
+                                                {{/if}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end #profile-comment tab -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#birthdate').datepicker({
+        format: 'dd/mm/yyyy',
+        value: new Date().toLocaleDateString('en-SG'),
+        uiLibrary: 'bootstrap4',
+    });
+</script>
