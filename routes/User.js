@@ -83,9 +83,9 @@ router.post("/register", async (req, res) => {
 			//Nodemailer		
 			async function sendEmail(userId, email, token) {
             let transporter = nodemailer.createTransport({
-              //host: "smtp.ethereal.email",
-              //port: 587,
-              service: "gmail",
+              host: "smtp.ethereal.email",
+              port: 587,
+              //service: "gmail",
               secure: false, // true for 465, false for other ports
               auth: {
                 //user: "moshe.schulist55@ethereal.email", // generated ethereal user
@@ -104,7 +104,7 @@ router.post("/register", async (req, res) => {
               to: email, // list of receivers
               subject: "Node Email Verification ✔", // Subject line
               text: "Node Email Verification", // plain text body
-               html: `Thank you registering with Node.<br><br>
+              html: `Thank you registering with Node.<br><br>
 								Hello <strong> ${fname} ${lname} <br><br></strong>
 								Please<a href = "http://localhost:5000/user/verify/${userId}/${token}">
 								<strong>verify</strong></a>your account.<br><br>
@@ -347,9 +347,9 @@ router.post('/forgetpwd', (req, res) => {
                 //Nodemailer		
                 async function sendEmail(userId, email, token, fname, lname) {
                     let transporter = nodemailer.createTransport({
-                        //host: "smtp.ethereal.email",
-                        //port: 587,
-                        service: "gmail",
+                        host: "smtp.ethereal.email",
+                        port: 587,
+                        //service: "gmail",
                         secure: false, // true for 465, false for other ports
                         auth: {
                             //user: "moshe.schulist55@ethereal.email", // generated ethereal user
@@ -364,7 +364,7 @@ router.post('/forgetpwd', (req, res) => {
                     });
 
                     let message = {
-                        from: 'Eugene <Admin>  👻<NoReply@Node.com>', // sender address
+                        from: 'Eugene 👻<NoReply@Node.com>', // sender address
                         to: email, // list of receivers
                         subject: "Change Password Verification ✔", // Subject line
                         text: "Change Password  Verification", // plain text body

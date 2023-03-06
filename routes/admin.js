@@ -101,7 +101,7 @@ router.post("/delete_user", (req, res) => {
 router.post("/update_user", (req, res) => {
   let { fname,lname, email, password, id, phone,location,role,verified } = req.body;
   const hash = bcrypt.hashSync(password);
-  password = hash;
+  
   User.update(
     {
 	  fname,
@@ -121,6 +121,7 @@ router.post("/update_user", (req, res) => {
   )
     .then(() => {
       res.redirect("/adminRoute/manageusers");
+      console.log("ACTUAL PASS :",password);
     })
     .catch((err) => console.log(err));
 });
