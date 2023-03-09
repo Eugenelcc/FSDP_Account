@@ -15,9 +15,9 @@ const flash = require("connect-flash");
 //Nodemailer		
 			async function deletereason(id, email, reason, fname, lname) {
         let transporter = nodemailer.createTransport({
-          //host: "smtp.ethereal.email",
+          host: "smtp.ethereal.email",
           //port: 587,
-          service: "gmail",
+          //service: "gmail",
           secure: false, // true for 465, false for other ports
           auth: {
             //user: "moshe.schulist55@ethereal.email", // generated ethereal user
